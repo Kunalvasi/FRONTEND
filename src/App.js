@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import SignUp from './pages/SignUp/SignUp';
+import Login from './pages/Login/Login';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 
-function App() {
+// Define a functional component
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <Router>
+    <Routes>
+      <Route path='/Login' element={<Login/>}/>
+      <Route path='/SignUp' element={<SignUp/>}/>
+    </Routes>
+   </Router>
+   
+   </>
   );
 }
 
-export default App;
+// Render the App component into the root element
